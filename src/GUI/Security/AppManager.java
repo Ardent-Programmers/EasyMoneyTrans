@@ -6,6 +6,7 @@
 package GUI.Security;
 
 import DatabaseManager.Customer;
+import DatabaseManager.DatabaseManager;
 import GUI.ApplicationManager;
 import GUI.Welcome;
 
@@ -17,7 +18,7 @@ public class AppManager {
     
     public static void exit()
     {
-        ApplicationManager.DBManager.cust.setObject(new Customer());
+        DatabaseManager.cust.setObject(new Customer());
         ApplicationManager.application.loadScene(new Welcome());
     }
     

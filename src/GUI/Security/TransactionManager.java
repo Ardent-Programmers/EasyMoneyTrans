@@ -13,8 +13,7 @@ import GUI.ApplicationManager;
 import GUI.Options.Options;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 /**
  *
@@ -23,8 +22,8 @@ import java.util.logging.Logger;
 public class TransactionManager {
     
     static Transfer trans = new Transfer();
-    static Customer cust = ApplicationManager.DBManager.cust;
-    static TransferDAO t = ApplicationManager.DBManager.t;
+    static Customer cust = DatabaseManager.cust;
+    static TransferDAO t = DatabaseManager.t;
     
     public static void withdraw(float Amount) {
         init();
@@ -36,7 +35,7 @@ public class TransactionManager {
         
         if(trans.Amount > cust.Amount)
         {
-            ApplicationManager.Notify.sendNotification("You Don't have Enuff money u have only " + cust.Amount, 1);
+            ApplicationManager.Notify.sendNotification("You Don't have Enough money\n You have " + cust.Amount, 1);
         }
         else
         {
@@ -116,7 +115,7 @@ public class TransactionManager {
     public static void update(float BalanceAmt)
     {
         //           updating in the database
-           boolean s =  ApplicationManager.DBManager.c.changeAmount(BalanceAmt,cust.AccountNo);
+           boolean s =  DatabaseManager.c.changeAmount(BalanceAmt,cust.AccountNo);
            
            if(s)
            {

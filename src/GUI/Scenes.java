@@ -10,5 +10,5 @@ package GUI;
  * @author User
  */
 public enum Scenes {
-    Welcome,AccountValidation,SecretKeyValidation
+    Welcome,AccountValidation,SecretKeyValidation;
 }

@@ -6,7 +6,6 @@
 package GUI.Security;
 
 import GUI.ApplicationManager;
-import java.util.Date;
 
 /**
  *
@@ -22,7 +21,8 @@ public class NotificationManager {
     
      
     
-    private  void show()
+    @SuppressWarnings("unused")
+	private  void show()
     {
         POPUP.setVisible(true);
     }

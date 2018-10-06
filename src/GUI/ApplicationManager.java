@@ -11,19 +11,8 @@ package GUI;
  */
 
 
-import DatabaseManager.Customer;
 import DatabaseManager.DatabaseManager;
 import GUI.Security.NotificationManager;
-
-
-
-
-
-
-
-
-
-
 
 
 public class ApplicationManager {
@@ -54,9 +43,9 @@ public class ApplicationManager {
     {
         try {
             
-            DBManager.cust.setObject(DBManager.c.getCustomer(AccNo));
+            DatabaseManager.cust.setObject(DatabaseManager.c.getCustomer(AccNo));
         } catch (Exception ex) {
-            System.out.println("Customer Initiaization failed");
+            System.out.println("Customer account initialization failed");
         }
     }
     
@@ -69,22 +58,19 @@ public class ApplicationManager {
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                
-                
-//                creating GUIManager as Application
+                //Run GUI related files
                 application = new GUIManager();
                 
-//                creating Notificationmanager Object
+               //Run Notification related files
                 Notify = new NotificationManager();
                 
                 
                 
-                //data base connectivity
+                //Database connection
+                 DBManager = new DatabaseManager();
                 
-                DBManager = new DatabaseManager();
                 
-                
-//                setting the transfer limit
+               // Transfer limit
                 DatabaseManager.t.setTransLimit(20000.0f);
 //                application.topBarInvisible(true);
                

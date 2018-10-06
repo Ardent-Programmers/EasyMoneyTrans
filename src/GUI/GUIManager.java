@@ -6,7 +6,6 @@
 package GUI;
 
 import GUI.Security.Notification;
-import GUI.Security.NotificationManager;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -22,12 +21,11 @@ public class GUIManager {
     
     JFrame window;
     public Notification popup;
-    
     private JPanel prevComp;
 
     public GUIManager() {
         startApplication();
-        //        adding menu inorder to send notification in later?
+        //        adding menu in-order to send notification in later?
         popup = new Notification();
         
         
@@ -53,7 +51,7 @@ public class GUIManager {
 
                 JPanel p = new Welcome();
                 prevComp = p;
-                loadScene(p);
+                loadScene(prevComp);
 
 
 
